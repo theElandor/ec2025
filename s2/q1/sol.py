@@ -54,6 +54,29 @@ def dp(U,i):
     memo[key] = best_score
     return best_score
 
+# after contets analysis: bottom up DP.
+# AI generated boilerplate. Not super efficient,
+# I just want to learn how to write bottom up dp solutions.
+# In this case we go for each coin and expand the states that
+# we alredy have in which that coin appears.
+def bottom_up_dp(total_coins):
+    data = {}
+    data[(frozenset(), 0)] = 0   # no slots used, starting with coin 0
+    for i in range(total_coins): # for each coin
+        new_data = {} # we want to update the states that we have
+        for (U, j), cost in data.items(): # for each state that I have
+            if j != i: continue
+            for slot in SLOTS: # try each slot
+                if slot not in U:
+                    newU = U | {slot}
+                    new_cost = cost + SCORES[(i, slot)]
+                    key = (newU, i+1)
+                    if key not in new_data: new_data[key] = new_cost
+                    else: new_data[key] = max(new_data[key], new_cost)
+        data = new_data
+    # after assigning all coins, i == total_coins
+    return min(data.values())
+
 with open(filename) as f:
     grid, coins= f.read().split("\n\n")
     grid, coins= grid.splitlines(), coins.splitlines()
@@ -70,3 +93,4 @@ with open(filename) as f:
     print(SCORES)
     U = set() 
     print(dp(U, len(coins)-1)) 
+    print(bottom_up_dp(len(coins)))
