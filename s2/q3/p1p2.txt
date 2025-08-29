@@ -1,0 +1,42 @@
+    // PART 1 stuff ============================
+    // ll total =0;
+    // ll roll_number = 0;
+    // while(total < 10000){
+    //     roll_number++;
+    //     vector<ll> results;
+    //     for(auto &d:dice){
+    //         ll result = roll(d, roll_number);
+    //         results.push_back(result);
+    //     }
+    //     ll s = accumulate(results.begin(), results.end(), 0);
+    //     total = total + s;
+    // }
+    // cout<<"ans: "<<roll_number<<endl;
+    // PART 2 stuff ==============================
+    // string tr = "51257284";
+    // vector<ll> track;
+    // for(char c : tr){
+    //     track.push_back(c-'0');
+    // }
+    // print(track);
+    // ll roll_number =0;
+    // vector<ll> positions;
+    // while(true){
+    //     int rolls=0;
+    //     roll_number++;
+    //     cout<<roll_number<<endl;
+    //     for(auto &d:dice){
+    //         if(d.track_pos != track.size()){
+    //             rolls++;
+    //             ll result = roll(d, roll_number);
+    //             if(result == track[d.track_pos]){
+    //                 d.track_pos++;
+    //             }
+    //             if(d.track_pos == track.size())
+    //                 positions.push_back(d.id);
+    //         }
+    //     }
+    //     if(rolls == 0) break;
+    // }
+    // print(positions);
+    // PART 3 =================================
