@@ -5,7 +5,11 @@
             "type": "cppvsdbg",
             "request": "launch",
             "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+<<<<<<< HEAD
             "args": ["test"],
+=======
+            "args": ["input", "input_grid"],
+>>>>>>> 30fa6b8f21bd07ec039bc5f1c218d5e0a30bcb16
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
